@@ -12,6 +12,7 @@
 		4D93148322A17FBC00BB367A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D93148222A17FBC00BB367A /* Assets.xcassets */; };
 		4D93148622A17FBC00BB367A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D93148422A17FBC00BB367A /* Main.storyboard */; };
 		4D93148922A17FBC00BB367A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D93148822A17FBC00BB367A /* main.m */; };
+		4D93149222A194F600BB367A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D93149122A194F600BB367A /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		4D93148722A17FBC00BB367A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D93148822A17FBC00BB367A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4D93148A22A17FBC00BB367A /* MacBird.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacBird.entitlements; sourceTree = "<group>"; };
+		4D93149122A194F600BB367A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D93149222A194F600BB367A /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +46,7 @@
 			children = (
 				4D93147B22A17FBA00BB367A /* MacBird */,
 				4D93147A22A17FBA00BB367A /* Products */,
+				4D93149022A194F500BB367A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +72,14 @@
 				4D93148A22A17FBC00BB367A /* MacBird.entitlements */,
 			);
 			path = MacBird;
+			sourceTree = "<group>";
+		};
+		4D93149022A194F500BB367A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D93149122A194F600BB367A /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,6 +113,11 @@
 				TargetAttributes = {
 					4D93147822A17FBA00BB367A = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

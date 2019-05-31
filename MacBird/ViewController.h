@@ -7,9 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebKit.h>
 
-@interface ViewController : NSViewController
+@interface ViewController : NSViewController <WKNavigationDelegate, WKUIDelegate>
 
+@property (strong) IBOutlet WKWebView *webView;
+@property (strong) IBOutlet NSProgressIndicator *progressBar;
 
 @end
-
