@@ -9,35 +9,13 @@
 #import "ViewController.h"
 #import <WebKit/WebKit.h>
 
-@interface WKWebView(SynchronousEvaluateJavaScript)
-- (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)script;
-@end
+@implementation VCWindowController
 
-@implementation WKWebView(SynchronousEvaluateJavaScript)
-
-- (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)script
-{
-    __block NSString *resultString = nil;
-    __block BOOL finished = NO;
-    
-    [self evaluateJavaScript:script completionHandler:^(id result, NSError *error) {
-        if (error == nil) {
-            if (result != nil) {
-                resultString = [NSString stringWithFormat:@"%@", result];
-            }
-        } else {
-            NSLog(@"evaluateJavaScript error : %@", error.localizedDescription);
-        }
-        finished = YES;
-    }];
-    
-    while (!finished)
-    {
-        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
-    }
-    
-    return resultString;
+-(BOOL)windowShouldClose:(NSWindow *)sender {
+    [NSApp hide:nil];
+    return NO;
 }
+
 @end
 
 @implementation ViewController
@@ -64,7 +42,7 @@
 
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     self.progressBar.hidden = YES;
-    NSLog(@"Color: %@", [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('BODY')[0].style.color"]);
+    self.blueView.hidden = YES;
 }
 
 -(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {

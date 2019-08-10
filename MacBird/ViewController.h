@@ -13,5 +13,10 @@
 
 @property (strong) IBOutlet WKWebView *webView;
 @property (strong) IBOutlet NSProgressIndicator *progressBar;
+@property (strong) IBOutlet NSBox *blueView;
+
+@end
+
+@interface VCWindowController : NSWindowController<NSWindowDelegate>
 
 @end

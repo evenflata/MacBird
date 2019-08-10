@@ -8,8 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
-
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate> {
+    NSStatusItem *statusItem;
+    NSImage *statusImage;
+    NSImage *statusHighlightImage;
+}
 
 @end
 
