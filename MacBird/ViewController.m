@@ -9,6 +9,10 @@
 #import "ViewController.h"
 #import <WebKit/WebKit.h>
 
+@interface WKPreferences ()
+-(void)_setFullScreenEnabled:(BOOL)fullScreenEnabled;
+@end
+
 @implementation VCWindowController
 
 -(BOOL)windowShouldClose:(NSWindow *)sender {
@@ -24,6 +28,7 @@
     [super viewDidLoad];
     _webView.navigationDelegate = self;
     _webView.UIDelegate = self;
+    [self.webView.configuration.preferences _setFullScreenEnabled:YES];
     NSURL *nsurl=[NSURL URLWithString:@"https://mobile.twitter.com/login"];
     NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
     [_webView loadRequest:nsrequest];

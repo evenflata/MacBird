@@ -300,6 +300,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.evendev.MacBird;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -318,6 +319,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.evendev.MacBird;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
